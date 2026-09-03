@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamar Glaser | Applied AI Researcher & Senior Principal Engineer</title>
-    <!-- Academic Fonts and FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <title>Tamar Glaser | Applied AI Leader & Researcher</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --radius: 12px;
         }
 
         * {
@@ -29,274 +28,286 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
             color: var(--text-main);
-            background-color: var(--bg-main);
-            line-height: 1.7;
+            line-height: 1.6;
+            padding-bottom: 60px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 48px;
-            padding: 60px 24px;
-        }
-
-        /* --- Sidebar Profile --- */
-        aside {
+        /* --- Header / Navigation Bar --- */
+        header {
             position: sticky;
-            top: 40px;
-            height: fit-content;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .profile-card {
-            background: var(--bg-card);
-            padding: 32px 24px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            text-align: center;
-        }
-
-        .avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 3px solid var(--bg-card);
-            box-shadow: 0 0 0 2px var(--accent);
-        }
-
-        .profile-card h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.6rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .profile-card .role {
-            font-size: 0.95rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-
-        .affiliation {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn-social {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px 16px;
-            background: var(--bg-main);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.88rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
-
-        .btn-social:hover {
-            background: var(--accent);
-            color: #ffffff;
-            border-color: var(--accent);
-        }
-
-        /* --- Main Content Area --- */
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-
-        section {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 24px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--bg-main);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .about-text {
-            font-size: 1.02rem;
-            color: var(--text-main);
-            line-height: 1.8;
-        }
-
-        /* --- Interactive Research Fields / Tabs --- */
-        .tabs-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-
-        .tab-btn {
-            background: var(--bg-main);
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--text-main);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .tab-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .tab-btn.active {
-            background: var(--accent);
-            color: #ffffff;
-            border-color: var(--accent);
-        }
-
-        .tab-content {
-            display: none;
-            background: var(--bg-main);
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .tab-content h3 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .tab-content p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* --- Publications Section --- */
-        .scholar-header {
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-            gap: 12px;
+            padding: 16px 24px;
         }
 
-        .pub-item {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .pub-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .pub-title {
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .pub-authors {
-            font-size: 0.92rem;
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
             color: var(--text-main);
-            margin-bottom: 4px;
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        .me-author {
-            font-weight: 700;
-            color: var(--accent);
+        .logo span {
+            color: var(--accent-blue);
         }
 
-        .pub-venue {
-            font-size: 0.88rem;
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
             color: var(--text-muted);
-            font-style: italic;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-blue);
+        }
+
+        /* --- Main Container --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding: 0 24px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+        }
+
+        .avatar-frame {
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+            margin: 0 auto;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            border-color: var(--accent-blue);
+        }
+
+        /* --- Section Titles --- */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            margin-top: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .section-header i {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        /* --- Interactive Tabs (Research Fields) --- */
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: var(--accent-blue);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            border-color: var(--accent-blue);
+        }
+
+        .tab-pane {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent-blue);
+            padding: 24px;
+            border-radius: var(--radius);
+        }
+
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* --- Cards Grid (Publications & Experience) --- */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: var(--radius);
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-purple);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
         }
 
         .badge-year {
-            display: inline-block;
-            background: var(--bg-main);
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.78rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-right: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        /* --- Timeline (Experience & Service) --- */
-        .timeline-item {
-            margin-bottom: 28px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-title {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-size: 0.75rem;
             font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 20px;
         }
 
-        .timeline-sub {
-            color: var(--accent);
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-purple);
             font-weight: 600;
-            font-size: 0.92rem;
             margin-bottom: 6px;
         }
 
-        .timeline-date {
-            font-size: 0.85rem;
+        .card-authors {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .timeline-desc {
-            font-size: 0.95rem;
-            color: var(--text-main);
+        .me-author {
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
         }
 
         @keyframes fadeIn {
@@ -304,203 +315,230 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive Layout */
-        @media (max-width: 900px) {
-            .container {
+        /* Mobile Layout */
+        @media (max-width: 800px) {
+            .hero {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
-            aside {
-                position: relative;
-                top: 0;
+            .social-buttons {
+                justify-content: center;
+            }
+            nav {
+                display: none; /* Can be toggled */
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Sidebar Profile Card -->
-        <aside>
-            <div class="profile-card">
-                <img src="profile.jpg" alt="Tamar Glaser" class="avatar" onerror="this.src='https://via.placeholder.com/160';">
-                <h1>Tamar Glaser</h1>
-                <div class="role">Senior Principal Engineer & Applied AI Researcher</div>
-                <div class="affiliation">
-                    <p><i class="fa-solid fa-building-user"></i> Harman International</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Johns Creek, GA</p>
-                </div>
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Tamar<span>Glaser</span></a>
+            <nav>
+                <a href="#about" class="active">About</a>
+                <a href="#research">Research Fields</a>
+                <a href="#publications">Publications</a>
+                <a href="#experience">Experience</a>
+            </nav>
+        </div>
+    </header>
 
-                <div class="social-links">
-                    <a href="https://scholar.google.com/citations?user=phl57rQAAAAJ&hl=en" target="_blank" class="btn-social">
-                        <i class="fa-solid fa-graduation-cap"></i> Google Scholar Profile
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="avatar-frame">
+                <img src="profile.jpg" alt="Tamar Glaser" onerror="this.src='https://via.placeholder.com/220';">
+            </div>
+            <div>
+                <div class="hero-title">
+                    <h1>Tamar Glaser</h1>
+                </div>
+                <div class="hero-subtitle">Senior Principal Engineer & Applied AI Researcher</div>
+                <p class="hero-bio">
+                    AI/Machine Learning leader specializing in computer vision, generative architectures, content representation, and responsible AI guardrails[cite: 1]. Working across the end-to-end pipeline from foundational research to user-facing industrial products[cite: 1].
+                </p>
+
+                <div class="social-buttons">
+                    <a href="https://scholar.google.com/citations?user=phl57rQAAAAJ&hl=en" target="_blank" class="btn">
+                        <i class="fa-solid fa-graduation-cap"></i> Google Scholar
                     </a>
-                    <a href="https://www.linkedin.com/in/tamar-glaser" target="_blank" class="btn-social">
+                    <a href="https://www.linkedin.com/in/tamar-glaser" target="_blank" class="btn">
                         <i class="fa-brands fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://openreview.net/" target="_blank" class="btn-social">
+                    <a href="https://openreview.net/" target="_blank" class="btn">
                         <i class="fa-solid fa-book-open"></i> OpenReview
                     </a>
-                    <a href="https://orcid.org/" target="_blank" class="btn-social">
+                    <a href="https://orcid.org/" target="_blank" class="btn">
                         <i class="fa-brands fa-orcid"></i> ORCID
-                    </a>
-                    <a href="https://www.webofscience.com/" target="_blank" class="btn-social">
-                        <i class="fa-solid fa-network-wired"></i> Web of Science
                     </a>
                 </div>
             </div>
-        </aside>
+        </section>
 
-        <!-- Main Content Stream -->
-        <main>
-            <!-- About Section -->
-            <section id="about">
-                <h2><i class="fa-regular fa-user"></i> About</h2>
-                <p class="about-text">
-                    I am an AI/Machine Learning leader and researcher specializing in computer vision, deep learning, and responsible generative architectures. My work spans foundational representation research to scalable industrial deployment, with a focus on feature disentanglement, multimodal representation, content safety, and algorithmic fairness[cite: 1].
-                </p>
-            </section>
+        <!-- Research Fields Tabs -->
+        <div class="section-header" id="research">
+            <i class="fa-solid fa-microscope"></i>
+            <h2>Research Fields & Expertise</h2>
+        </div>
 
-            <!-- Research Focus / Interactive Tabs -->
-            <section id="research-areas">
-                <h2><i class="fa-solid fa-flask"></i> Research Focus & Expertise</h2>
-                
-                <div class="tabs-nav">
-                    <button class="tab-btn active" onclick="openTab(event, 'tab-foundational')">Foundational ML Models</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-representation')">Content Representation</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-disentanglement')">Feature Disentanglement</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-responsible')">Responsible AI</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-detection')">Generated Content Detection</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-recsys')">Recommendation Systems</button>
-                    <button class="tab-btn" onclick="openTab(event, 'tab-cv')">Computer Vision</button>
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-1')">Foundational ML Models</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-2')">Content Representation</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-3')">Feature Vectors Disentanglement</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-4')">Responsible AI</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-5')">Generated Content Detection</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-6')">Recommendation Systems</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-7')">Computer Vision</button>
+        </div>
+
+        <div id="tab-1" class="tab-pane active">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Foundational Machine Learning Models & Architectures</h3>
+            <p style="color: var(--text-muted);">Researching transformer models, multimodal foundation architecture design, and fine-grained unlearning mechanisms in large-scale generative diffusion systems[cite: 1].</p>
+        </div>
+        <div id="tab-2" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Content Representation</h3>
+            <p style="color: var(--text-muted);">Developing state-of-the-art visual, audio, and multimodal embedding spaces, integrating temporal dynamics and attention-driven context modeling[cite: 1].</p>
+        </div>
+        <div id="tab-3" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Feature Vectors Disentanglement</h3>
+            <p style="color: var(--text-muted);">Investigating deep feature representations to eliminate spurious correlations, enhance model interpretability, and ensure robust generalization across domain shifts[cite: 1].</p>
+        </div>
+        <div id="tab-4" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Responsible AI & Safety</h3>
+            <p style="color: var(--text-muted);">Designing safety guardrails for multi-modal LLMs, algorithmic bias mitigation, and regulatory data standards for biometrics and healthcare applications[cite: 1].</p>
+        </div>
+        <div id="tab-5" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Generated Content Detection</h3>
+            <p style="color: var(--text-muted);">Architecting robust synthetic content detection systems achieving high precision-recall across diverse generation engines and chairing international DeepFake analysis workshops[cite: 1].</p>
+        </div>
+        <div id="tab-6" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Recommendation Systems</h3>
+            <p style="color: var(--text-muted);">Spearheading end-to-end multimodal retrieval, ranking, and recommendation engines integrated into real-world user products[cite: 1].</p>
+        </div>
+        <div id="tab-7" class="tab-pane">
+            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Computer Vision</h3>
+            <p style="color: var(--text-muted);">Classical and deep vision systems for multi-target tracking, automated photo album event detection, change detection, and image registration[cite: 1].</p>
+        </div>
+
+        <!-- Publications -->
+        <div class="section-header" id="publications">
+            <i class="fa-solid fa-newspaper"></i>
+            <h2>Selected Publications</h2>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</div>
+                    <span class="badge-year">CVPR 2025</span>
                 </div>
-
-                <div id="tab-foundational" class="tab-content active">
-                    <h3>Foundational Machine Learning Models & Architectures</h3>
-                    <p>Researching transformer architectures, multimodal foundation frameworks, continual learning, and fine-grained unlearning mechanisms in large models[cite: 1].</p>
+                <div class="card-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh[cite: 1]</div>
+                <div class="tag-list">
+                    <span class="tag">Diffusion Models</span>
+                    <span class="tag">Unlearning</span>
+                    <span class="tag">Responsible AI</span>
                 </div>
+            </div>
 
-                <div id="tab-representation" class="tab-content">
-                    <h3>Content Representation</h3>
-                    <p>Designing rich representations for image, video, and audio datasets[cite: 1]. Leveraging temporal context, attention mechanisms, and deep visual embeddings[cite: 1].</p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Continual Unlearning for Foundational Text-to-Image Models without Generalization Erosion</div>
+                    <span class="badge-year">T-PAMI 2025</span>
                 </div>
+                <div class="card-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh[cite: 1]</div>
+                <div class="tag-list">
+                    <span class="tag">Continual Unlearning</span>
+                    <span class="tag">Foundation Models</span>
+                </div>
+            </div>
 
-                <div id="tab-disentanglement" class="tab-content">
-                    <h3>Feature Vectors Disentanglement</h3>
-                    <p>Investigating latent feature representations to isolate spurious correlations, improve generalization, and enable precise concept removal[cite: 1].</p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">The Llama 3 Herd of Models</div>
+                    <span class="badge-year">arXiv 2024</span>
                 </div>
+                <div class="card-authors">A. Dubey, A. Jauhri, ..., <span class="me-author">T. Glaser</span>, ..., R. Ganapathy[cite: 1]</div>
+                <div class="tag-list">
+                    <span class="tag">LLMs</span>
+                    <span class="tag">Multimodal AI</span>
+                </div>
+            </div>
 
-                <div id="tab-responsible" class="tab-content">
-                    <h3>Responsible AI & Safety</h3>
-                    <p>Developing algorithmic bias mitigation, fairness metrics, safety guardrails for generative LLMs, and dataset regulatory standards[cite: 1].</p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Navigating Text-To-Image Generative Bias Across Indic Languages</div>
+                    <span class="badge-year">ECCV 2024</span>
                 </div>
+                <div class="card-authors">S. Mittal, A. Sudan, R. Singh, M. Vatsa, <span class="me-author">T. Glaser</span>, T. Hassner[cite: 1]</div>
+                <div class="tag-list">
+                    <span class="tag">Generative Bias</span>
+                    <span class="tag">Multilingual</span>
+                </div>
+            </div>
 
-                <div id="tab-detection" class="tab-content">
-                    <h3>Generated Content Detection</h3>
-                    <p>Building high-precision detection models for AI-generated media, synthetic text-to-image identification, and leading workshop tracks on DeepFake detection[cite: 1].</p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">On responsible machine learning datasets emphasizing fairness, privacy and regulatory norms</div>
+                    <span class="badge-year">Nature Machine Intelligence 2024</span>
                 </div>
+                <div class="card-authors">S. Mittal, K. Thakral, R. Singh, ..., <span class="me-author">T. Glaser</span>, T. Hassner[cite: 1]</div>
+                <div class="tag-list">
+                    <span class="tag">Fairness</span>
+                    <span class="tag">Privacy</span>
+                    <span class="tag">Datasets</span>
+                </div>
+            </div>
+        </div>
 
-                <div id="tab-recsys" class="tab-content">
-                    <h3>Recommendation Systems</h3>
-                    <p>Architecting production multimodal retrieval and recommendation engines driven by modular deep feature representations[cite: 1].</p>
-                </div>
+        <!-- Experience -->
+        <div class="section-header" id="experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <h2>Experience & Leadership</h2>
+        </div>
 
-                <div id="tab-cv" class="tab-content">
-                    <h3>Computer Vision</h3>
-                    <p>Classic and deep learning vision systems covering multi-target tracking, image registration, automated event classification, and multi-scale temporal context[cite: 1].</p>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Senior Principal Engineer, Machine Learning</div>
+                    <span class="badge-year">2024 – Present</span>
                 </div>
-            </section>
+                <div class="card-subtitle">Harman International[cite: 1]</div>
+                <div class="card-authors">Spearheading design and implementation of multimodal content representation and recommendation systems[cite: 1].</div>
+            </div>
 
-            <!-- Publications Section -->
-            <section id="publications">
-                <div class="scholar-header">
-                    <h2><i class="fa-solid fa-book"></i> Selected Publications</h2>
-                    <a href="https://scholar.google.com/citations?user=phl57rQAAAAJ&hl=en" target="_blank" style="font-size: 0.88rem; color: var(--accent); text-decoration: none; font-weight: 600;">
-                        View Live Citation Metrics on Google Scholar <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Senior Machine Learning Engineer / Researcher</div>
+                    <span class="badge-year">2022 – 2024</span>
                 </div>
+                <div class="card-subtitle">Meta Platforms, Inc.[cite: 1]</div>
+                <div class="card-authors">Led safety mitigations for multimodal LLMs, built a 91% precision-recall generated content detector, and drove generative fairness initiatives[cite: 1].</div>
+            </div>
 
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2025</span> Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</div>
-                    <div class="pub-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh</div>
-                    <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Co-Organizer & Program Chair</div>
+                    <span class="badge-year">2023 – 2024</span>
                 </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2025</span> Continual Unlearning for Foundational Text-to-Image Models without Generalization Erosion</div>
-                    <div class="pub-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh</div>
-                    <div class="pub-venue">Under Review: IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2024</span> The Llama 3 Herd of Models</div>
-                    <div class="pub-authors">A. Dubey, A. Jauhri, ..., <span class="me-author">T. Glaser</span>, ..., R. Ganapathy</div>
-                    <div class="pub-venue">arXiv preprint arXiv:2407.21783</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2024</span> Navigating Text-To-Image Generative Bias Across Indic Languages</div>
-                    <div class="pub-authors">S. Mittal, A. Sudan, R. Singh, M. Vatsa, <span class="me-author">T. Glaser</span>, T. Hassner</div>
-                    <div class="pub-venue">European Conference on Computer Vision (ECCV)</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2024</span> On responsible machine learning datasets emphasizing fairness, privacy and regulatory norms with examples in biometrics and healthcare</div>
-                    <div class="pub-authors">S. Mittal, K. Thakral, R. Singh, ..., <span class="me-author">T. Glaser</span>, T. Hassner</div>
-                    <div class="pub-venue">Nature Machine Intelligence</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2022</span> PETA: Photo Albums Event Recognition using Transformers Attention</div>
-                    <div class="pub-authors"><span class="me-author">T. Glaser</span>, E. Ben-Baruch, G. Sharir, N. Zamir, A. Noy, L. Zelnik-Manor</div>
-                    <div class="pub-venue">IEEE International Conference on Pattern Recognition (ICPR)</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2022</span> You Only Need a Good Embeddings Extractor to Fix Spurious Correlations</div>
-                    <div class="pub-authors">R. Mehta, V. Albiero, L. Chen, I. Evtimov, <span class="me-author">T. Glaser</span>, Z. Li, T. Hassner</div>
-                    <div class="pub-venue">Responsible Computer Vision (RCV) Workshop, ECCV (Oral Presentation)</div>
-                </div>
-
-                <div class="pub-item">
-                    <div class="pub-title"><span class="badge-year">2011</span> Incorporating temporal context in bag-of-words models</div>
-                    <div class="pub-authors"><span class="me-author">T. Glaser</span>, L. Zelnik-Manor</div>
-                    <div class="pub-venue">IEEE International Conference on Computer Vision Workshops (ICCV Workshops) (Oral)</div>
-                </div>
-            </section>
-
-            <!-- Professional Service & Workshops -->
-            <section id="service">
-                <h2><i class="fa-solid fa-users-gear"></i> Workshop Organization & Academic Leadership</h2>
-                
-                <div class="timeline-item">
-                    <div class="timeline-title">Co-Organizer & Program Chair</div>
-                    <div class="timeline-sub">Second Workshop and Challenge on DeepFake Analysis and Detection (DFAD)</div>
-                    <div class="timeline-date">CVPR 2024 | Seattle, WA</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-title">Co-Organizer & Program Chair</div>
-                    <div class="timeline-sub">Workshop on DeepFake Analysis and Detection (DFAD)</div>
-                    <div class="timeline-date">ICCV 2023 | Paris, France</div>
-                </div>
-            </section>
-        </main>
+                <div class="card-subtitle">CVPR 2024 & ICCV 2023[cite: 1]</div>
+                <div class="card-authors">Organized the Workshop and Challenge on DeepFake Analysis and Detection (DFAD)[cite: 1].</div>
+            </div>
+        </div>
     </div>
 
-    <!-- Script to handle interactive tabs -->
+    <!-- Script to toggle research tabs -->
     <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
-            }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+        function switchTab(evt, tabId) {
+            const panes = document.querySelectorAll('.tab-pane');
+            panes.forEach(pane => pane.classList.remove('active'));
+            
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
         }
     </script>
 </body>
