@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamar Glaser | Applied AI Leader & Researcher</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Tamar Glaser | Applied AI Leader & Senior Researcher</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --accent-blue: #38bdf8;
-            --accent-purple: #818cf8;
+            --bg-dark: #090d16;
+            --bg-card: rgba(22, 30, 49, 0.7);
+            --bg-card-hover: rgba(30, 41, 67, 0.8);
+            --accent-cyan: #38bdf8;
+            --accent-pink: #f43f5e;
+            --accent-purple: #a855f7;
+            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border: #334155;
-            --radius: 12px;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.4);
+            --radius: 16px;
         }
 
         * {
@@ -32,60 +36,67 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
-        /* --- Header / Navigation Bar --- */
+        /* --- Navigation --- */
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            padding: 18px 24px;
         }
 
         .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: var(--accent-blue);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.2s;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: all 0.2s;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--accent-blue);
+        nav a:hover {
+            color: var(--accent-cyan);
         }
 
-        /* --- Main Container --- */
+        /* --- Main Layout --- */
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 40px auto 0;
             padding: 0 24px;
         }
@@ -93,23 +104,37 @@
         /* --- Hero Section --- */
         .hero {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 260px 1fr;
             gap: 40px;
             align-items: center;
             background: var(--bg-card);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             padding: 40px;
             border-radius: var(--radius);
             margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
         }
 
         .avatar-frame {
             width: 220px;
             height: 220px;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 2px solid var(--accent-blue);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
             margin: 0 auto;
         }
 
@@ -120,51 +145,66 @@
         }
 
         .hero-title h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            font-weight: 600;
+            font-size: 1.15rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero-location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
             margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .hero-bio {
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 0.98rem;
             margin-bottom: 24px;
             line-height: 1.7;
+            opacity: 0.9;
         }
 
         .social-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 10px 18px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             color: var(--text-main);
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            border-radius: 10px;
+            font-size: 0.88rem;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.25s ease;
         }
 
         .btn:hover {
-            background: var(--accent-blue);
-            color: var(--bg-dark);
-            border-color: var(--accent-blue);
+            background: var(--gradient-accent);
+            color: #000;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
         }
 
         /* --- Section Titles --- */
@@ -173,25 +213,58 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 24px;
-            margin-top: 48px;
+            margin-top: 56px;
         }
 
         .section-header h2 {
-            font-size: 1.4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: -0.3px;
         }
 
         .section-header i {
-            color: var(--accent-blue);
-            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
         }
 
-        /* --- Interactive Tabs (Research Fields) --- */
+        /* --- Skills & Expertise Section --- */
+        .skills-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: var(--radius);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-chip {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: var(--accent-cyan);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .skill-chip:hover {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: var(--accent-purple);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* --- Interactive Tabs (Research Focus) --- */
         .tab-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
@@ -199,9 +272,9 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-muted);
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
@@ -209,22 +282,24 @@
 
         .tab-btn:hover {
             color: var(--text-main);
-            border-color: var(--accent-blue);
+            border-color: var(--accent-cyan);
         }
 
         .tab-btn.active {
-            background: var(--accent-blue);
-            color: var(--bg-dark);
-            border-color: var(--accent-blue);
+            background: var(--gradient-accent);
+            color: #000;
+            border-color: transparent;
+            font-weight: 700;
         }
 
         .tab-pane {
             display: none;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-left: 4px solid var(--accent-blue);
-            padding: 24px;
+            border-left: 4px solid var(--accent-cyan);
+            padding: 28px;
             border-radius: var(--radius);
+            backdrop-filter: blur(12px);
         }
 
         .tab-pane.active {
@@ -232,23 +307,33 @@
             animation: fadeIn 0.3s ease;
         }
 
-        /* --- Cards Grid (Publications & Experience) --- */
+        .tab-pane h3 {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* --- Cards & Timeline --- */
         .card-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
         }
 
         .card {
             background: var(--bg-card);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            padding: 24px;
+            padding: 28px;
             border-radius: var(--radius);
-            transition: border-color 0.2s;
+            transition: all 0.25s ease;
         }
 
         .card:hover {
-            border-color: var(--accent-purple);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .card-header {
@@ -257,61 +342,68 @@
             align-items: flex-start;
             margin-bottom: 8px;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 12px;
         }
 
         .card-title {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--text-main);
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .badge-year {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-blue);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            font-size: 0.75rem;
+        .card-company {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .badge-date {
+            background: rgba(168, 85, 247, 0.12);
+            color: var(--accent-purple);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            font-size: 0.8rem;
             font-weight: 700;
-            padding: 2px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
         }
 
-        .card-subtitle {
-            font-size: 0.9rem;
-            color: var(--accent-purple);
-            font-weight: 600;
-            margin-bottom: 6px;
+        .card-bullets {
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        .card-authors {
-            font-size: 0.9rem;
+        .card-bullets li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .card-bullets li strong {
+            color: var(--text-main);
+        }
+
+        .pub-authors {
+            font-size: 0.92rem;
             color: var(--text-muted);
             margin-bottom: 8px;
         }
 
+        .pub-venue {
+            font-size: 0.88rem;
+            color: var(--accent-cyan);
+            font-style: italic;
+        }
+
         .me-author {
-            color: var(--accent-blue);
+            color: var(--accent-cyan);
             font-weight: 700;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 12px;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 4px;
+            text-decoration: underline;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -320,27 +412,32 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 24px;
+            }
+            .hero-location {
+                justify-content: center;
             }
             .social-buttons {
                 justify-content: center;
             }
             nav {
-                display: none; /* Can be toggled */
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
+    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Tamar<span>Glaser</span></a>
             <nav>
-                <a href="#about" class="active">About</a>
-                <a href="#research">Research Fields</a>
-                <a href="#publications">Publications</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#research">Research</a>
                 <a href="#experience">Experience</a>
+                <a href="#publications">Publications</a>
             </nav>
         </div>
     </header>
@@ -355,9 +452,12 @@
                 <div class="hero-title">
                     <h1>Tamar Glaser</h1>
                 </div>
-                <div class="hero-subtitle">Senior Principal Engineer & Applied AI Researcher</div>
+                <div class="hero-subtitle">Computer Vision & Deep Learning Applied Researcher</div>
+                <div class="hero-location">
+                    <i class="fa-solid fa-location-dot" style="color: var(--accent-cyan);"></i> Greater Atlanta Area / Atlanta Metropolitan
+                </div>
                 <p class="hero-bio">
-                    AI/Machine Learning leader specializing in computer vision, generative architectures, content representation, and responsible AI guardrails[cite: 1]. Working across the end-to-end pipeline from foundational research to user-facing industrial products[cite: 1].
+                    Results-oriented AI/Machine Learning leader with a proven track record of driving innovation through holistic problem-solving, from foundational research to user-facing features. Experienced in identifying, defining, and solving complex AI problems with a blend of technical expertise, scalable architecture design, and strategic decision-making.
                 </p>
 
                 <div class="social-buttons">
@@ -377,10 +477,34 @@
             </div>
         </section>
 
-        <!-- Research Fields Tabs -->
+        <!-- Technical Skills Section -->
+        <div class="section-header" id="skills">
+            <i class="fa-solid fa-layer-group"></i>
+            <h2>Areas of Expertise & Skills</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <span class="skill-chip">Machine Learning</span>
+                <span class="skill-chip">Computer Vision</span>
+                <span class="skill-chip">Technical Leadership</span>
+                <span class="skill-chip">Responsible AI & Safety</span>
+                <span class="skill-chip">Generative AI</span>
+                <span class="skill-chip">Content Representation</span>
+                <span class="skill-chip">Feature Vectors Disentanglement</span>
+                <span class="skill-chip">Generated Content Detection</span>
+                <span class="skill-chip">Recommendation Systems</span>
+                <span class="skill-chip">Multimodal LLM Alignment</span>
+                <span class="skill-chip">System Architecture Design</span>
+                <span class="skill-chip">End-to-End Product Development</span>
+                <span class="skill-chip">Multivariate Data Analysis</span>
+                <span class="skill-chip">Cross-Functional Collaboration</span>
+            </div>
+        </div>
+
+        <!-- Research Focus / Tabs -->
         <div class="section-header" id="research">
-            <i class="fa-solid fa-microscope"></i>
-            <h2>Research Fields & Expertise</h2>
+            <i class="fa-solid fa-atom"></i>
+            <h2>Research Focus</h2>
         </div>
 
         <div class="tab-buttons">
@@ -394,141 +518,264 @@
         </div>
 
         <div id="tab-1" class="tab-pane active">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Foundational Machine Learning Models & Architectures</h3>
-            <p style="color: var(--text-muted);">Researching transformer models, multimodal foundation architecture design, and fine-grained unlearning mechanisms in large-scale generative diffusion systems[cite: 1].</p>
+            <h3>Foundational Machine Learning Models & Architectures</h3>
+            <p style="color: var(--text-muted);">Researching transformer models, foundational multimodal systems, continual unlearning mechanisms, and architecture optimization for generative diffusion models without generalization erosion.</p>
         </div>
         <div id="tab-2" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Content Representation</h3>
-            <p style="color: var(--text-muted);">Developing state-of-the-art visual, audio, and multimodal embedding spaces, integrating temporal dynamics and attention-driven context modeling[cite: 1].</p>
+            <h3>Content Representation</h3>
+            <p style="color: var(--text-muted);">Architecting multimodal feature representation frameworks for audio, visual, and textual content, incorporating temporal attention context and scalable data pipeline schemas.</p>
         </div>
         <div id="tab-3" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Feature Vectors Disentanglement</h3>
-            <p style="color: var(--text-muted);">Investigating deep feature representations to eliminate spurious correlations, enhance model interpretability, and ensure robust generalization across domain shifts[cite: 1].</p>
+            <h3>Feature Vectors Disentanglement</h3>
+            <p style="color: var(--text-muted);">Conducting foundational research in deep feature representations, model interpretability, and embedding extractors to eliminate spurious correlations, bias, and domain shifts.</p>
         </div>
         <div id="tab-4" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Responsible AI & Safety</h3>
-            <p style="color: var(--text-muted);">Designing safety guardrails for multi-modal LLMs, algorithmic bias mitigation, and regulatory data standards for biometrics and healthcare applications[cite: 1].</p>
+            <h3>Responsible AI & Safety</h3>
+            <p style="color: var(--text-muted);">Leading cross-functional safety mitigation for multimodal LLMs, designing evaluation metrics, implementing fairness mechanisms (demographic parity), and establishing datasets aligned with regulatory norms.</p>
         </div>
         <div id="tab-5" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Generated Content Detection</h3>
-            <p style="color: var(--text-muted);">Architecting robust synthetic content detection systems achieving high precision-recall across diverse generation engines and chairing international DeepFake analysis workshops[cite: 1].</p>
+            <h3>Generated Content Detection</h3>
+            <p style="color: var(--text-muted);">Developing state-of-the-art synthetic media detection models achieving top precision-recall benchmarks across diverse generators, alongside co-organizing the international DeepFake Analysis and Detection (DFAD) workshops at CVPR and ICCV.</p>
         </div>
         <div id="tab-6" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Recommendation Systems</h3>
-            <p style="color: var(--text-muted);">Spearheading end-to-end multimodal retrieval, ranking, and recommendation engines integrated into real-world user products[cite: 1].</p>
+            <h3>Recommendation Systems</h3>
+            <p style="color: var(--text-muted);">Building scalable, modular recommendation pipelines leveraging state-of-the-art content representation models for personalized multimodal user experience delivery.</p>
         </div>
         <div id="tab-7" class="tab-pane">
-            <h3 style="color: var(--accent-blue); margin-bottom: 8px;">Computer Vision</h3>
-            <p style="color: var(--text-muted);">Classical and deep vision systems for multi-target tracking, automated photo album event detection, change detection, and image registration[cite: 1].</p>
+            <h3>Computer Vision</h3>
+            <p style="color: var(--text-muted);">Extensive experience across classical and deep learning computer vision, including automatic event recognition, photo album curation, object detection, registration, change detection, and multi-target tracking under challenging conditions.</p>
         </div>
 
-        <!-- Publications -->
+        <!-- Professional Experience -->
+        <div class="section-header" id="experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <h2>Professional Experience</h2>
+        </div>
+
+        <div class="card-grid">
+            <!-- Harman -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Senior Principal Engineer, Machine Learning</div>
+                        <div class="card-company">Harman International</div>
+                    </div>
+                    <span class="badge-date">2024 – Present</span>
+                </div>
+                <ul class="card-bullets">
+                    <li>Spearheading the design and development of an innovative, multimodal content representation and recommendation system integrated into a user-facing product, leveraging cutting-edge machine learning approaches.</li>
+                    <li>Leading end-to-end machine learning design and implementation, including data pipeline architecture, model development, and system integration.</li>
+                    <li>Driving the adoption of state-of-the-art techniques, including transformer-based models, and conducting original research to bridge gaps toward achieving novel product goals.</li>
+                    <li>Architecting modular, scalable systems, defining data schemas for model training and system operations, and implementing robust pipelines for seamless functionality.</li>
+                    <li>Collaborating cross-functionally to align system design and ML strategies with product goals, ensuring optimal performance for audio and multimodal content delivery.</li>
+                </ul>
+            </div>
+
+            <!-- Meta -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Senior Machine Learning Engineer / Researcher</div>
+                        <div class="card-company">Meta Platforms, Inc.</div>
+                    </div>
+                    <span class="badge-date">2022 – 2024</span>
+                </div>
+                <ul class="card-bullets">
+                    <li>Owned and led cross-functional projects for AI-powered products focused on responsible AI, content moderation, and user experience.</li>
+                    <li>Drove the development and implementation of robust AI systems by identifying potential risks, developing evaluation metrics, and implementing mitigation strategies aligned with product goals.</li>
+                    <li><strong>Generated Content Detection:</strong> Developed a state-of-the-art detection model that achieved a 91% minimum precision-recall across various generators, surpassing industry benchmarks.</li>
+                    <li><strong>Fairness in Sticker Generation:</strong> Implemented a fairness mitigation technique enabling significant bias reduction in sticker generation as measured by demographic parity metrics.</li>
+                    <li><strong>Multi-modal LLM Safety:</strong> Led safety mitigation for Multi-modal LLMs, connecting data gathering requirements with evaluated risks and designing solution architecture to significantly reduce harmful output.</li>
+                    <li>Conducted foundational research in feature representations and model interpretability to address challenges in fairness, robustness, generalization, and disentanglement.</li>
+                </ul>
+            </div>
+
+            <!-- Alibaba -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Computer Vision & Deep Learning Algorithm Developer / Researcher</div>
+                        <div class="card-company">Alibaba Machine Intelligence Israel Lab, DAMO Academy</div>
+                    </div>
+                    <span class="badge-date">2018 – 2021</span>
+                </div>
+                <ul class="card-bullets">
+                    <li>Developed novel deep learning algorithms for photo album event recognition and user image event detection, surpassing state-of-the-art performance while efficiently leveraging existing system components.</li>
+                    <li>Led the development of an automatic event detection system analyzing multivariate, multi-scale user image data to achieve a <strong>50% improvement in event detection and segmentation accuracy (F1 score)</strong>.</li>
+                    <li>Owned and led the development of an automatic album curation system end-to-end from design to production in a complex, multi-team environment.</li>
+                    <li>Contributed to diverse R&D projects in image quality, 3D reconstruction, and multi-source information fusion.</li>
+                </ul>
+            </div>
+
+            <!-- Elbit -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Computer Vision Algorithms Developer</div>
+                        <div class="card-company">Elbit Systems, ISTAR Division</div>
+                    </div>
+                    <span class="badge-date">2010 – 2018</span>
+                </div>
+                <ul class="card-bullets">
+                    <li>Developed computer vision and image processing algorithms for object detection, recognition, multi-target tracking, and change detection across challenging image/video wavelengths and motions.</li>
+                </ul>
+            </div>
+
+            <!-- Rafael -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Computer Vision Algorithms Developer</div>
+                        <div class="card-company">Rafael & Israeli Air Force Avionics Dept.</div>
+                    </div>
+                    <span class="badge-date">2005 – 2008</span>
+                </div>
+                <ul class="card-bullets">
+                    <li>Led a project team dealing with multi-target detection in thermal cameras under highly challenging conditions.</li>
+                    <li>Worked in the image processing department of the missile division, focusing on image registration-based projects.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Selected Publications -->
         <div class="section-header" id="publications">
-            <i class="fa-solid fa-newspaper"></i>
-            <h2>Selected Publications</h2>
+            <i class="fa-solid fa-scroll"></i>
+            <h2>Selected Publications & Academic Activity</h2>
         </div>
 
         <div class="card-grid">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models</div>
-                    <span class="badge-year">CVPR 2025</span>
+                    <span class="badge-date">CVPR 2025</span>
                 </div>
-                <div class="card-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh[cite: 1]</div>
-                <div class="tag-list">
-                    <span class="tag">Diffusion Models</span>
-                    <span class="tag">Unlearning</span>
-                    <span class="tag">Responsible AI</span>
-                </div>
+                <div class="pub-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh</div>
+                <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Continual Unlearning for Foundational Text-to-Image Models without Generalization Erosion</div>
-                    <span class="badge-year">T-PAMI 2025</span>
+                    <span class="badge-date">Under Review</span>
                 </div>
-                <div class="card-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh[cite: 1]</div>
-                <div class="tag-list">
-                    <span class="tag">Continual Unlearning</span>
-                    <span class="tag">Foundation Models</span>
-                </div>
+                <div class="pub-authors">K. Thakral, <span class="me-author">T. Glaser</span>, T. Hassner, M. Vatsa, R. Singh</div>
+                <div class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">The Llama 3 Herd of Models</div>
-                    <span class="badge-year">arXiv 2024</span>
+                    <span class="badge-date">2024</span>
                 </div>
-                <div class="card-authors">A. Dubey, A. Jauhri, ..., <span class="me-author">T. Glaser</span>, ..., R. Ganapathy[cite: 1]</div>
-                <div class="tag-list">
-                    <span class="tag">LLMs</span>
-                    <span class="tag">Multimodal AI</span>
-                </div>
+                <div class="pub-authors">A. Dubey, A. Jauhri, A. Pandey, A. Kadian, A. Al-Dahle, ..., <span class="me-author">T. Glaser</span>, ..., R. Ganapathy</div>
+                <div class="pub-venue">arXiv preprint arXiv:2407.21783</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Navigating Text-To-Image Generative Bias Across Indic Languages</div>
-                    <span class="badge-year">ECCV 2024</span>
+                    <span class="badge-date">ECCV 2024</span>
                 </div>
-                <div class="card-authors">S. Mittal, A. Sudan, R. Singh, M. Vatsa, <span class="me-author">T. Glaser</span>, T. Hassner[cite: 1]</div>
-                <div class="tag-list">
-                    <span class="tag">Generative Bias</span>
-                    <span class="tag">Multilingual</span>
-                </div>
+                <div class="pub-authors">S. Mittal, A. Sudan, R. Singh, M. Vatsa, <span class="me-author">T. Glaser</span>, T. Hassner</div>
+                <div class="pub-venue">European Conference on Computer Vision (ECCV)</div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">On responsible machine learning datasets emphasizing fairness, privacy and regulatory norms</div>
-                    <span class="badge-year">Nature Machine Intelligence 2024</span>
+                    <div class="card-title">On responsible machine learning datasets emphasizing fairness, privacy and regulatory norms with examples in biometrics and healthcare</div>
+                    <span class="badge-date">2024</span>
                 </div>
-                <div class="card-authors">S. Mittal, K. Thakral, R. Singh, ..., <span class="me-author">T. Glaser</span>, T. Hassner[cite: 1]</div>
-                <div class="tag-list">
-                    <span class="tag">Fairness</span>
-                    <span class="tag">Privacy</span>
-                    <span class="tag">Datasets</span>
+                <div class="pub-authors">S. Mittal, K. Thakral, R. Singh, M. Vatsa, <span class="me-author">T. Glaser</span>, T. Hassner</div>
+                <div class="pub-venue">Nature Machine Intelligence</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">PETA: Photo Albums Event Recognition using Transformers Attention</div>
+                    <span class="badge-date">ICPR 2022</span>
                 </div>
+                <div class="pub-authors"><span class="me-author">T. Glaser</span>, E. Ben-Baruch, G. Sharir, N. Zamir, A. Noy, L. Zelnik-Manor</div>
+                <div class="pub-venue">26th International Conference on Pattern Recognition (ICPR)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">You Only Need a Good Embeddings Extractor to Fix Spurious Correlations</div>
+                    <span class="badge-date">ECCV 2022</span>
+                </div>
+                <div class="pub-authors">R. Mehta, V. Albiero, L. Chen, I. Evtimov, <span class="me-author">T. Glaser</span>, Z. Li, T. Hassner</div>
+                <div class="pub-venue">Responsible Computer Vision (RCV) Workshop, ECCV (Oral presentation)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Incorporating temporal context in bag-of-words models</div>
+                    <span class="badge-date">ICCV Workshops 2011</span>
+                </div>
+                <div class="pub-authors"><span class="me-author">T. Glaser</span>, L. Zelnik-Manor</div>
+                <div class="pub-venue">IEEE International Conference on Computer Vision Workshops (Oral)</div>
             </div>
         </div>
 
-        <!-- Experience -->
-        <div class="section-header" id="experience">
-            <i class="fa-solid fa-briefcase"></i>
-            <h2>Experience & Leadership</h2>
+        <!-- Academic Leadership -->
+        <div class="section-header">
+            <i class="fa-solid fa-handshake"></i>
+            <h2>Workshop Organization & Academic Service</h2>
         </div>
-
         <div class="card-grid">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Senior Principal Engineer, Machine Learning</div>
-                    <span class="badge-year">2024 – Present</span>
+                    <div>
+                        <div class="card-title">Co-Organizer & Program Chair</div>
+                        <div class="card-company">Second Workshop and Challenge on DeepFake Analysis and Detection (DFAD)</div>
+                    </div>
+                    <span class="badge-date">CVPR 2024</span>
                 </div>
-                <div class="card-subtitle">Harman International[cite: 1]</div>
-                <div class="card-authors">Spearheading design and implementation of multimodal content representation and recommendation systems[cite: 1].</div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">In conjunction with CVPR 2024, Seattle, WA, USA.</p>
             </div>
-
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Senior Machine Learning Engineer / Researcher</div>
-                    <span class="badge-year">2022 – 2024</span>
+                    <div>
+                        <div class="card-title">Co-Organizer & Program Chair</div>
+                        <div class="card-company">Workshop on DeepFake Analysis and Detection (DFAD)</div>
+                    </div>
+                    <span class="badge-date">ICCV 2023</span>
                 </div>
-                <div class="card-subtitle">Meta Platforms, Inc.[cite: 1]</div>
-                <div class="card-authors">Led safety mitigations for multimodal LLMs, built a 91% precision-recall generated content detector, and drove generative fairness initiatives[cite: 1].</div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Co-Organizer & Program Chair</div>
-                    <span class="badge-year">2023 – 2024</span>
-                </div>
-                <div class="card-subtitle">CVPR 2024 & ICCV 2023[cite: 1]</div>
-                <div class="card-authors">Organized the Workshop and Challenge on DeepFake Analysis and Detection (DFAD)[cite: 1].</div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">In conjunction with ICCV 2023, Paris, France.</p>
             </div>
         </div>
+
+        <!-- Education -->
+        <div class="section-header">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Education</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">M.Sc. in Electrical Engineering (Honors)</div>
+                        <div class="card-company">Technion - Israel Institute of Technology</div>
+                    </div>
+                    <span class="badge-date">GPA: 4.0 (95.4/100)</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Computer vision research thesis, Full Academic Scholarship, Teaching Assistant.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">B.Sc. in Electrical Engineering & B.A. in Physics (Dual Degree)</div>
+                        <div class="card-company">Technion - Israel Institute of Technology</div>
+                    </div>
+                    <span class="badge-date">Honors</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Graduated through the elite IDF "Psagot" excellence track on a full scholarship.</p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Script to toggle research tabs -->
+    <!-- Script for Interactive Tabs -->
     <script>
         function switchTab(evt, tabId) {
             const panes = document.querySelectorAll('.tab-pane');
